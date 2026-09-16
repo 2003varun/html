@@ -475,3 +475,182 @@ textarea.input { min-height: 90px; resize: vertical; }
   .btn-primary:hover { background: color-mix(in srgb, var(--color-accent) 86%, #000); border-color: color-mix(in srgb, var(--color-accent) 70%, #000); }
   .btn-primary:active { background: color-mix(in srgb, var(--color-accent) 74%, #000); }
 
+
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT & MEDIA QUERIES
+   ========================================================================== */
+
+/* Prevent horizontal overflow */
+html, body {
+  overflow-x: hidden;
+}
+
+/* Tablet / Small Desktop (Max 1024px) */
+@media (max-width: 1024px) {
+  /* Safely wrap navbar without crowding */
+  header > div {
+    gap: 16px !important;
+    justify-content: space-between;
+  }
+  header nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 24px !important;
+    padding-top: 16px;
+    border-top: 1px solid var(--color-divider);
+    margin-top: 4px;
+  }
+  
+  /* Reduce excessive vertical paddings for tablet */
+  main > section[style*="padding:8"],
+  main > section > div[style*="padding:8"],
+  main > section > div[style*="padding:7"] {
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+}
+
+/* Tablet Portrait & Large Mobile (Max 768px) */
+@media (max-width: 768px) {
+  /* Reduce horizontal paddings to maximize screen space */
+  header > div,
+  main > section:not([aria-label="Q-DAT operations floor"]):not([aria-label="Client logos"]),
+  main > section > div,
+  footer > div {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+
+  /* Reduce Hero section spacing */
+  main > section:first-child {
+    padding-top: 40px !important;
+    gap: 40px !important;
+  }
+  
+  /* Reduce gaps for layout wrapping where things get crowded */
+  main > section[style*="gap:64px"],
+  main > section[style*="gap:56px"],
+  main > section > div[style*="gap:64px"],
+  main > section > div[style*="gap:56px"] {
+    gap: 32px !important;
+  }
+}
+
+/* Mobile Devices (Max 480px) */
+@media (max-width: 480px) {
+  /* Mobile padding limits */
+  header > div,
+  main > section:not([aria-label="Q-DAT operations floor"]):not([aria-label="Client logos"]),
+  main > section > div,
+  footer > div {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Navbar refinements for small mobile */
+  header nav {
+    gap: 12px !important;
+    padding-top: 12px;
+  }
+  header nav a {
+    font-size: 13px !important;
+  }
+  header .btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+  header > div > a > span {
+    font-size: 18px !important;
+  }
+
+  /* Typography scaling */
+  h1 { font-size: clamp(32px, 9vw, 42px) !important; }
+  h2 { font-size: 28px !important; }
+
+  /* Hero Section stats grid */
+  main > section:first-child > div:first-child > div:last-child {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)) !important;
+  }
+
+  /* Pillars Component (Hero right side) */
+  figure > div:nth-child(2) {
+    flex-direction: column !important;
+    gap: 12px !important;
+  }
+  figure > div:nth-child(2) > div:first-child {
+    flex: 1 1 auto !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+  }
+  figure > div:nth-child(2) > div:first-child button {
+    flex: 1 1 calc(50% - 2px) !important;
+    font-size: 12px !important;
+    padding: 8px !important;
+    border-left: none !important;
+    border-top: 3px solid var(--color-divider);
+  }
+  figure > div:nth-child(2) > div:first-child button[style*="var(--color-accent-800)"] {
+    border-top-color: var(--color-accent-800) !important;
+  }
+
+  /* Industries layout stack */
+  #industries > div > div:last-child > div > div:first-child {
+    flex: 1 1 100% !important;
+    margin-bottom: -4px;
+  }
+
+  /* Table (Selected work) layout reset */
+  sc-raw-table.table, sc-raw-thead, sc-raw-tbody, sc-raw-tr, sc-raw-td, sc-raw-th {
+    display: block !important;
+    width: 100% !important;
+  }
+  sc-raw-thead {
+    display: none !important;
+  }
+  sc-raw-tr {
+    margin-bottom: 16px;
+    border: 1px solid var(--color-divider);
+    border-radius: var(--radius-md);
+    background: var(--color-bg);
+  }
+  sc-raw-td {
+    border-bottom: none !important;
+    padding: 12px 16px !important;
+  }
+  sc-raw-td:first-child {
+    padding-bottom: 4px !important;
+    color: var(--color-text);
+  }
+  sc-raw-td:nth-child(2) {
+    font-size: 13px !important;
+    padding-top: 0 !important;
+    padding-bottom: 8px !important;
+  }
+  sc-raw-td:last-child {
+    border-top: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
+    padding-top: 12px !important;
+  }
+
+  /* FAQ */
+  #faq summary {
+    font-size: 16px !important;
+    padding: 16px 0 !important;
+  }
+
+  /* Footer stack */
+  footer > div > div:first-child {
+    grid-template-columns: 1fr !important;
+    gap: 28px !important;
+  }
+  footer > div > div:last-child {
+    flex-direction: column !important;
+    align-items: center;
+    text-align: center;
+    gap: 16px !important;
+  }
+  footer > div > div:last-child > span:last-child {
+    justify-content: center;
+  }
+}
