@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 /* Q-DAT website stylesheet - extracted from index.html */
 
 /* Bundler shell */
 * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { background: #fbfcfd; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
+    body { background: #fbfcfd; display: block; width: 100%; max-width: 100%; min-height: 100vh; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
     #__bundler_loading { position: fixed; bottom: 20px; right: 20px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; color: #666; background: #fff; padding: 8px 14px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 10000; }
     /* #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #fbfcfd; z-index: 9999; } */
     #__bundler_thumbnail svg { width: 100%; height: 100%; object-fit: contain; }
@@ -379,6 +380,13 @@ textarea.input { min-height: 90px; resize: vertical; }
 .tag-outline { border: 1px solid var(--color-accent); color: var(--color-accent); }
 
 /* — navigation — */
+.logo {
+    font-family: 'Russo One', sans-serif;
+    font-size: 28px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
 .nav {
   display: flex; align-items: center; gap: var(--space-4);
   padding: var(--space-3) var(--space-4);
@@ -478,179 +486,721 @@ textarea.input { min-height: 90px; resize: vertical; }
 
 
 /* ==========================================================================
-   RESPONSIVE LAYOUT & MEDIA QUERIES
+   RESPONSIVE DESIGN SYSTEM & COMPREHENSIVE MEDIA QUERIES
    ========================================================================== */
 
-/* Prevent horizontal overflow */
-html, body {
+/* --------------------------------------------------------------------------
+   GLOBAL RESPONSIVE FOUNDATION & RESETS
+   -------------------------------------------------------------------------- */
+*, *::before, *::after {
+  box-sizing: border-box !important;
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-text-size-adjust: 100%;
+  width: 100%;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
   overflow-x: hidden;
 }
 
-/* Tablet / Small Desktop (Max 1024px) */
-@media (max-width: 1024px) {
-  /* Safely wrap navbar without crowding */
-  header > div {
-    gap: 16px !important;
-    justify-content: space-between;
+body {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-height: 100vh;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow-x: hidden !important;
+  position: relative;
+}
+
+img, svg, video {
+  max-width: 100% !important;
+  height: auto;
+}
+
+/* Container system */
+header > div,
+main,
+main > section,
+main > section:not([aria-label="Q-DAT operations floor"]):not([aria-label="Client logos"]) > div,
+footer > div {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Prevent any flex item from refusing to shrink */
+div, section, figure, nav, article, main, header, footer {
+  min-width: 0;
+}
+
+/* Dedicated Q-DAT Navbar Logo Typography */
+.logo {
+  font-family: 'Russo One', sans-serif !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.5px;
+  white-space: nowrap !important;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+/* --------------------------------------------------------------------------
+   1. Large Desktop (min-width: 1200px)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1200px) {
+  header > div,
+  main > section:not([aria-label="Q-DAT operations floor"]):not([aria-label="Client logos"]),
+  main > section:not([aria-label="Q-DAT operations floor"]):not([aria-label="Client logos"]) > div,
+  footer > div {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
   }
-  header nav {
-    order: 3;
-    width: 100%;
-    justify-content: center;
-    gap: 24px !important;
-    padding-top: 16px;
-    border-top: 1px solid var(--color-divider);
-    margin-top: 4px;
-  }
-  
-  /* Reduce excessive vertical paddings for tablet */
-  main > section[style*="padding:8"],
-  main > section > div[style*="padding:8"],
-  main > section > div[style*="padding:7"] {
-    padding-top: 56px !important;
-    padding-bottom: 56px !important;
+  .logo {
+    font-size: 28px !important;
   }
 }
 
-/* Tablet Portrait & Large Mobile (Max 768px) */
-@media (max-width: 768px) {
-  /* Reduce horizontal paddings to maximize screen space */
-  header > div,
-  main > section:not([aria-label="Q-DAT operations floor"]):not([aria-label="Client logos"]),
-  main > section > div,
+/* --------------------------------------------------------------------------
+   2. Laptop (max-width: 1199px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 1199px) {
+  header > div {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+    gap: 20px !important;
+  }
+  header nav {
+    gap: 20px !important;
+  }
+  header nav a {
+    font-size: 13.5px !important;
+  }
+  main > section:not([aria-label="Q-DAT operations floor"]):not([aria-label="Client logos"]) {
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+  main > section:not([aria-label="Q-DAT operations floor"]):not([aria-label="Client logos"]) > div {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
   footer > div {
     padding-left: 24px !important;
     padding-right: 24px !important;
   }
+}
 
-  /* Reduce Hero section spacing */
-  main > section:first-child {
-    padding-top: 40px !important;
+/* --------------------------------------------------------------------------
+   3. Tablet (max-width: 992px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 992px) {
+  /* Navbar Header */
+  header > div {
+    padding: 10px 20px !important;
+    gap: 16px !important;
+    justify-content: space-between !important;
+    flex-wrap: wrap !important;
+  }
+  header > div > a:first-child {
+    gap: 10px !important;
+    margin-right: auto !important;
+  }
+  header > div > a:first-child img {
+    height: 56px !important;
+    width: auto !important;
+  }
+  .logo {
+    font-size: 25px !important;
+  }
+  header nav {
+    order: 3 !important;
+    width: 100% !important;
+    justify-content: center !important;
+    gap: 20px !important;
+    padding-top: 12px !important;
+    border-top: 1px solid var(--color-divider) !important;
+    margin-top: 4px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+  header nav a {
+    font-size: 13.5px !important;
+  }
+  header .btn {
+    padding: 8px 16px !important;
+    font-size: 13.5px !important;
+    white-space: nowrap !important;
+  }
+
+  /* Section Spacing */
+  main > section:not([aria-label="Q-DAT operations floor"]):not([aria-label="Client logos"]) {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+    padding-top: 56px !important;
+    padding-bottom: 56px !important;
+  }
+  main > section > div[style*="padding:8"],
+  main > section > div[style*="padding:7"] {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Hero Section */
+  main > section:first-of-type {
+    padding-top: 48px !important;
+    padding-bottom: 48px !important;
     gap: 40px !important;
   }
-  
-  /* Reduce gaps for layout wrapping where things get crowded */
-  main > section[style*="gap:64px"],
-  main > section[style*="gap:56px"],
-  main > section > div[style*="gap:64px"],
-  main > section > div[style*="gap:56px"] {
+  main > section:first-of-type > div:first-child {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  main > section:first-of-type > figure {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  /* Why teams switch to us */
+  main > section:nth-of-type(3) > div {
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+  main > section:nth-of-type(3) > div > div:first-child {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  main > section:nth-of-type(3) > div > div:last-child {
+    width: 100% !important;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
+  }
+
+  /* Industries */
+  #industries > div {
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+  #industries > div > div:first-child {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  #industries > div > div:last-child {
+    width: 100% !important;
+  }
+
+  /* FAQ */
+  #faq > div {
+    flex-direction: column !important;
+    gap: 32px !important;
+  }
+  #faq > div > div:first-child {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  #faq > div > div:last-child {
+    width: 100% !important;
+  }
+
+  /* About Section */
+  #about > div {
+    flex-direction: column !important;
+    gap: 36px !important;
+  }
+  #about > div > div:first-child,
+  #about > div > div:last-child {
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Contact / Free Trial Form */
+  #contact > div {
+    flex-direction: column !important;
+    gap: 36px !important;
+  }
+  #contact > div > div:first-child,
+  #contact > div > div:last-child {
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Footer */
+  footer > div {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+  footer > div > div:first-child {
+    grid-template-columns: repeat(2, 1fr) !important;
     gap: 32px !important;
   }
 }
 
-/* Mobile Devices (Max 480px) */
-@media (max-width: 480px) {
-  /* Mobile padding limits */
+/* --------------------------------------------------------------------------
+   4. Mobile & 561px Screen Width (max-width: 768px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Container system */
   header > div,
   main > section:not([aria-label="Q-DAT operations floor"]):not([aria-label="Client logos"]),
-  main > section > div,
   footer > div {
-    padding-left: 16px !important;
-    padding-right: 16px !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
-
-  /* Navbar refinements for small mobile */
-  header nav {
+  
+  /* Navbar */
+  header > div {
+    padding-top: 8px !important;
+    padding-bottom: 8px !important;
     gap: 12px !important;
-    padding-top: 12px;
+  }
+  header > div > a:first-child {
+    gap: 8px !important;
+    flex-shrink: 0 !important;
+  }
+  header > div > a:first-child img {
+    height: 48px !important;
+    width: auto !important;
+  }
+  .logo {
+    font-size: 22px !important;
+  }
+  header nav {
+    gap: 14px !important;
+    padding-top: 8px !important;
+    justify-content: center !important;
   }
   header nav a {
     font-size: 13px !important;
   }
   header .btn {
-    padding: 8px 12px;
-    font-size: 13px;
-  }
-  header > div > a > span {
-    font-size: 18px !important;
+    padding: 7px 12px !important;
+    font-size: 12.5px !important;
+    white-space: nowrap !important;
   }
 
-  /* Typography scaling */
-  h1 { font-size: clamp(32px, 9vw, 42px) !important; }
-  h2 { font-size: 28px !important; }
-
-  /* Hero Section stats grid */
-  main > section:first-child > div:first-child > div:last-child {
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)) !important;
+  /* HERO SECTION - Crucial Fixes */
+  main > section:first-of-type {
+    display: flex !important;
+    flex-direction: column !important;
+    padding-top: 36px !important;
+    padding-bottom: 36px !important;
+    gap: 32px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  main > section:first-of-type > div:first-child {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  main > section:first-of-type > div:first-child > div:first-child {
+    font-size: 11px !important;
+    letter-spacing: 0.12em !important;
+    margin-bottom: 14px !important;
+    line-height: 1.4 !important;
+  }
+  
+  /* Responsive Typography */
+  h1, main > section:first-of-type h1 {
+    font-size: clamp(28px, 7vw, 42px) !important;
+    line-height: 1.08 !important;
+    letter-spacing: -0.02em !important;
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+  h2 {
+    font-size: clamp(22px, 5.5vw, 30px) !important;
+    line-height: 1.2 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+  }
+  main > section:first-of-type p {
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    margin-top: 18px !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  
+  /* Hero Action Buttons */
+  main > section:first-of-type > div:first-child > div:nth-child(3) {
+    margin-top: 24px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+    width: 100% !important;
+  }
+  main > section:first-of-type > div:first-child > div:nth-child(3) a.btn {
+    padding: 10px 18px !important;
+    font-size: 13.5px !important;
+  }
+  
+  /* Hero Stats Grid (2x2 layout, zero overflow) */
+  main > section:first-of-type > div:first-child > div:last-child {
+    margin-top: 28px !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    gap: 12px 16px !important;
+    border-top: 1px solid var(--color-divider) !important;
+    padding-top: 16px !important;
+  }
+  main > section:first-of-type > div:first-child > div:last-child > div {
+    padding: 0 !important;
+    border-left: none !important;
+    border-top: none !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+  main > section:first-of-type > div:first-child > div:last-child > div > div:first-child {
+    font-size: 28px !important;
+    line-height: 1 !important;
+  }
+  main > section:first-of-type > div:first-child > div:last-child > div > div:last-child {
+    font-size: 11px !important;
+    margin-top: 3px !important;
   }
 
-  /* Pillars Component (Hero right side) */
+  /* Right Hero Figure (Pillars & Chips Matrix) */
+  main > section:first-of-type > figure {
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    padding: 16px 14px !important;
+    box-sizing: border-box !important;
+  }
   figure > div:nth-child(2) {
+    display: flex !important;
     flex-direction: column !important;
     gap: 12px !important;
+    width: 100% !important;
   }
   figure > div:nth-child(2) > div:first-child {
-    flex: 1 1 auto !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
+    flex: 1 1 100% !important;
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 4px !important;
   }
   figure > div:nth-child(2) > div:first-child button {
-    flex: 1 1 calc(50% - 2px) !important;
-    font-size: 12px !important;
-    padding: 8px !important;
-    border-left: none !important;
-    border-top: 3px solid var(--color-divider);
+    width: 100% !important;
+    font-size: 11px !important;
+    padding: 8px 10px !important;
+    box-sizing: border-box !important;
   }
-  figure > div:nth-child(2) > div:first-child button[style*="var(--color-accent-800)"] {
-    border-top-color: var(--color-accent-800) !important;
+  figure > div:nth-child(2) > div:last-child {
+    width: 100% !important;
+    min-width: 0 !important;
+    gap: 6px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+  }
+  .qd-chip {
+    font-size: 11.5px !important;
+    padding: 6px 10px !important;
   }
 
-  /* Industries layout stack */
+  /* Marquee (Trusted by Teams) */
+  .marquee-container {
+    margin-bottom: 18px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden !important;
+  }
+  .marquee-logo-item {
+    flex: 0 0 160px !important;
+    width: 160px !important;
+    height: 80px !important;
+    padding: 0 12px !important;
+    box-sizing: border-box !important;
+  }
+  .marquee-logo-item .marquee-logo {
+    max-width: 130px !important;
+    max-height: 55px !important;
+    object-fit: contain !important;
+  }
+
+  /* Services 6-card grid */
+  #services > div > div:last-child {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    width: 100% !important;
+  }
+
+  /* Testimonials Grid */
+  main > section:nth-of-type(6) > div {
+    grid-template-columns: 1fr !important;
+    gap: 18px !important;
+    width: 100% !important;
+  }
+
+  /* Industries rows */
+  #industries > div > div:last-child > div {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    padding: 14px 0 !important;
+    width: 100% !important;
+  }
   #industries > div > div:last-child > div > div:first-child {
-    flex: 1 1 100% !important;
-    margin-bottom: -4px;
+    flex: 0 0 auto !important;
+    width: 100% !important;
+    font-size: 11px !important;
+    margin-bottom: 2px !important;
+  }
+  #industries > div > div:last-child > div > div:last-child {
+    width: 100% !important;
+    font-size: 14px !important;
+    line-height: 1.5 !important;
   }
 
-  /* Table (Selected work) layout reset */
+  /* Table (Selected work) responsive card layout */
   sc-raw-table.table, sc-raw-thead, sc-raw-tbody, sc-raw-tr, sc-raw-td, sc-raw-th {
     display: block !important;
     width: 100% !important;
+    box-sizing: border-box !important;
   }
   sc-raw-thead {
     display: none !important;
   }
   sc-raw-tr {
-    margin-bottom: 16px;
-    border: 1px solid var(--color-divider);
-    border-radius: var(--radius-md);
-    background: var(--color-bg);
+    margin-bottom: 14px !important;
+    border: 1px solid var(--color-divider) !important;
+    border-radius: var(--radius-md) !important;
+    background: var(--color-bg) !important;
+    padding: 14px 16px !important;
+    box-sizing: border-box !important;
   }
   sc-raw-td {
     border-bottom: none !important;
-    padding: 12px 16px !important;
+    padding: 4px 0 !important;
+    width: 100% !important;
   }
   sc-raw-td:first-child {
-    padding-bottom: 4px !important;
-    color: var(--color-text);
+    font-size: 16px !important;
+    color: var(--color-text) !important;
+    font-weight: 600 !important;
   }
   sc-raw-td:nth-child(2) {
-    font-size: 13px !important;
-    padding-top: 0 !important;
-    padding-bottom: 8px !important;
+    font-size: 12.5px !important;
+    color: var(--color-accent-700) !important;
+    margin-bottom: 4px !important;
   }
   sc-raw-td:last-child {
-    border-top: 1px solid color-mix(in srgb, var(--color-text) 8%, transparent);
-    padding-top: 12px !important;
+    border-top: 1px solid var(--color-divider) !important;
+    padding-top: 8px !important;
+    margin-top: 6px !important;
+    font-size: 13.5px !important;
+    line-height: 1.5 !important;
+  }
+
+  /* Operations floor banner */
+  section[aria-label="Q-DAT operations floor"] {
+    height: 240px !important;
+    width: 100% !important;
+  }
+
+  /* Contact Form card */
+  #contact > div > div:last-child {
+    padding: 24px 20px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  #contact form,
+  #contact form input,
+  #contact form textarea,
+  #contact form select {
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  #contact form > div[style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   5. Small Mobile (max-width: 480px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 480px) {
+  /* Container paddings */
+  header > div,
+  main > section:not([aria-label="Q-DAT operations floor"]):not([aria-label="Client logos"]),
+  footer > div {
+    padding-left: 14px !important;
+    padding-right: 14px !important;
+  }
+
+  /* Navbar */
+  header > div {
+    padding-top: 6px !important;
+    padding-bottom: 6px !important;
+    gap: 8px !important;
+  }
+  header > div > a:first-child img {
+    height: 42px !important;
+  }
+  .logo {
+    font-size: 20px !important;
+  }
+  header .btn {
+    padding: 6px 10px !important;
+    font-size: 11.5px !important;
+  }
+  header nav {
+    gap: 10px !important;
+    padding-top: 8px !important;
+  }
+  header nav a {
+    font-size: 12px !important;
+  }
+
+  /* Hero Section */
+  main > section:first-of-type {
+    padding-top: 28px !important;
+    padding-bottom: 28px !important;
+    gap: 24px !important;
+  }
+  main > section:first-of-type > div:first-child > div:nth-child(3) {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  main > section:first-of-type > div:first-child > div:nth-child(3) a.btn {
+    width: 100% !important;
+    text-align: center !important;
+  }
+
+  /* Marquee */
+  .marquee-container {
+    margin-bottom: 14px !important;
+  }
+  .marquee-logo-item {
+    flex: 0 0 130px !important;
+    width: 130px !important;
+    height: 65px !important;
+    padding: 0 8px !important;
+  }
+  .marquee-logo-item .marquee-logo {
+    max-width: 100px !important;
+    max-height: 40px !important;
+  }
+
+  /* Cards in Why teams switch / Services */
+  main > section:nth-of-type(3) > div > div:last-child,
+  #services > div > div:last-child {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .card {
+    padding: 18px 14px !important;
   }
 
   /* FAQ */
   #faq summary {
-    font-size: 16px !important;
-    padding: 16px 0 !important;
+    font-size: 15px !important;
+    padding: 12px 0 !important;
+  }
+  
+  /* Contact Form card */
+  #contact > div > div:last-child {
+    padding: 18px 14px !important;
   }
 
-  /* Footer stack */
+  /* Footer */
   footer > div > div:first-child {
     grid-template-columns: 1fr !important;
-    gap: 28px !important;
+    gap: 20px !important;
   }
   footer > div > div:last-child {
     flex-direction: column !important;
-    align-items: center;
-    text-align: center;
-    gap: 16px !important;
+    align-items: center !important;
+    text-align: center !important;
+    gap: 10px !important;
   }
-  footer > div > div:last-child > span:last-child {
-    justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   6. Very Small Mobile (max-width: 360px)
+   -------------------------------------------------------------------------- */
+@media (max-width: 360px) {
+  header > div,
+  main > section:not([aria-label="Q-DAT operations floor"]):not([aria-label="Client logos"]),
+  footer > div {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+
+  /* Navbar */
+  header > div {
+    padding-top: 4px !important;
+    padding-bottom: 4px !important;
+    gap: 6px !important;
+  }
+  header > div > a:first-child img {
+    height: 36px !important;
+  }
+  .logo {
+    font-size: 18px !important;
+  }
+  header .btn {
+    padding: 5px 8px !important;
+    font-size: 11px !important;
+  }
+  header nav {
+    gap: 8px !important;
+  }
+  header nav a {
+    font-size: 11px !important;
+  }
+
+  /* Hero stats */
+  main > section:first-of-type > div:first-child > div:last-child > div > div:first-child {
+    font-size: 24px !important;
+  }
+
+  /* Marquee */
+  .marquee-container {
+    margin-bottom: 10px !important;
+  }
+  .marquee-logo-item {
+    flex: 0 0 110px !important;
+    width: 110px !important;
+    height: 55px !important;
+    padding: 0 6px !important;
+  }
+  .marquee-logo-item .marquee-logo {
+    max-width: 85px !important;
+    max-height: 35px !important;
+  }
+
+  /* Pillars figure buttons */
+  figure > div:nth-child(2) > div:first-child button {
+    font-size: 10px !important;
+    padding: 6px 6px !important;
   }
 }
