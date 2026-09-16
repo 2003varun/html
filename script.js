@@ -1,0 +1,1 @@
+const fs = require('fs'); const html = fs.readFileSync('index.html', 'utf8'); const m = html.match(/marquee-content-rtl[\\s\\S]*?<\/div>/); console.log('RTL:', m ? m[0].split('<img').length - 1 : 0); const m2 = html.match(/marquee-content-ltr[\\s\\S]*?<\/div>/); console.log('LTR:', m2 ? m2[0].split('<img').length - 1 : 0);
