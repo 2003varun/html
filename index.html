@@ -95,19 +95,19 @@
           </figure>
     </section>
 
-    <section aria-label="Client logos" style="border-top:1px solid var(--color-divider);background:var(--color-surface);padding-top:48px;padding-bottom:48px;overflow:hidden">
+    <section aria-label="Client logos" style="border-top:1px solid var(--color-divider);background:var(--color-surface);padding-top:32px;padding-bottom:32px;overflow:hidden">
   <div style="text-align:center;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:12px">Trusted by teams at </div>
   <style>
     .marquee-wrapper {
       display: flex;
       flex-direction: column;
-      gap: 60px;
+      gap: 40px;
       width: 100%;
     }
     .marquee-track {
       display: flex;
       width: max-content;
-      gap: 50px;
+      gap: 100px;
     }
     .marquee-track.left-to-right {
       animation: scroll-ltr 45s linear infinite;
@@ -116,12 +116,12 @@
       animation: scroll-rtl 45s linear infinite;
     }
     @keyframes scroll-ltr {
-      0% { transform: translateX(calc(-50% - 25px)); }
+      0% { transform: translateX(calc(-50% - 50px)); }
       100% { transform: translateX(0%); }
     }
     @keyframes scroll-rtl {
       0% { transform: translateX(0%); }
-      100% { transform: translateX(calc(-50% - 25px)); }
+      100% { transform: translateX(calc(-50% - 50px)); }
     }
     
     .logo-marquee-item {
@@ -131,6 +131,10 @@
       aspect-ratio: 2 / 3;
       width: clamp(55px, 6vw, 85px);
       flex-shrink: 0;
+    }
+
+    .marquee-track.left-to-right .logo-marquee-item {
+      width: clamp(66px, 7.5vw, 102px);
     }
     
     .client-logo-img {
@@ -168,8 +172,8 @@
      .client-logo-img.logo-Vedantu{
       transform: scale(1.53) !important;
     }
-     .client-logo-img.logo-Newtral{
-      transform: scale(1.90) !important;
+     .client-logo-img.logo-newtral{
+      transform: scale(1.60) !important;
     }
      .client-logo-img.logo-ola{
       transform: scale(1.53) !important;
@@ -191,7 +195,7 @@
       transform: scale(1.38) !important;
     }
      .client-logo-img.logo-ads-removebg-preview{
-      transform: scale(1.80) !important;
+      transform: scale(1.90) !important;
     }
      .client-logo-img.logo-lg{
       transform: scale(1.65) !important;
@@ -285,7 +289,6 @@
       <div class="logo-marquee-item"><img src="./bg%20removed/Ziff_Devis.png" class="client-logo-img logo-ziff-devis" alt="Client logo" loading="lazy" style="transform: scale(1.00)"></div>
       <div class="logo-marquee-item"><img src="./bg%20removed/azim_premji.png" class="client-logo-img logo-azim-premji" alt="Client logo" loading="lazy" style="transform: scale(1.01)"></div>
       <div class="logo-marquee-item"><img src="./bg%20removed/esg.png" class="client-logo-img logo-esg" alt="Client logo" loading="lazy" style="transform: scale(1.01)"></div>
-
       <div class="logo-marquee-item"><img src="./bg%20removed/zyme.png" class="client-logo-img logo-zyme" alt="Client logo" loading="lazy" style="transform: scale(1.05)"></div>
     </div>
   </div>
