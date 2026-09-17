@@ -101,13 +101,13 @@
     .marquee-wrapper {
       display: flex;
       flex-direction: column;
-      gap: 32px;
+      gap: 60px;
       width: 100%;
     }
     .marquee-track {
       display: flex;
       width: max-content;
-      gap: 24px;
+      gap: 50px;
     }
     .marquee-track.left-to-right {
       animation: scroll-ltr 45s linear infinite;
@@ -116,12 +116,12 @@
       animation: scroll-rtl 45s linear infinite;
     }
     @keyframes scroll-ltr {
-      0% { transform: translateX(calc(-50% - 12px)); }
+      0% { transform: translateX(calc(-50% - 25px)); }
       100% { transform: translateX(0%); }
     }
     @keyframes scroll-rtl {
       0% { transform: translateX(0%); }
-      100% { transform: translateX(calc(-50% - 12px)); }
+      100% { transform: translateX(calc(-50% - 25px)); }
     }
     
     .logo-marquee-item {
@@ -140,75 +140,153 @@
       max-height: 100%;
       object-fit: contain;
     }
+  
+    .client-logo-img.logo-genpact {
+      transform: scale(0.85) !important;
+    }
+    .client-logo-img.logo-ca {
+      transform: scale(0.80) !important;
+    }
+    .client-logo-img.logo-tricon-infotech{
+      transform: scale(1.82) !important;
+    }
+    .client-logo-img.logo-pharmeasy{
+      transform: scale(1.60) !important;
+    }
+    .client-logo-img.logo-safelease{
+      transform: scale(1.67) !important;
+    }
+    .client-logo-img.logo-servopro{
+      transform: scale(1.67) !important;
+    }
+    .client-logo-img.logo-tally{
+      transform: scale(1.84) !important;
+    }
+    .client-logo-img.logo-udan{
+      transform: scale(1.53) !important;
+    }
+     .client-logo-img.logo-Vedantu{
+      transform: scale(1.53) !important;
+    }
+     .client-logo-img.logo-Newtral{
+      transform: scale(1.90) !important;
+    }
+     .client-logo-img.logo-ola{
+      transform: scale(1.53) !important;
+    }
+     .client-logo-img.logo-esg{
+      transform: scale(1.53) !important;
+    }
+     .client-logo-img.logo-birla{
+      transform: scale(1.60) !important;
+    }
+     .client-logo-img.logo-avery{
+      transform: scale(1.63) !important;
+    }
+     .client-logo-img.logo-aribasap{
+      transform: scale(1.60) !important;
+      
+    }
+     .client-logo-img.logo-bpl-medical{
+      transform: scale(1.38) !important;
+    }
+     .client-logo-img.logo-ads-removebg-preview{
+      transform: scale(1.80) !important;
+    }
+     .client-logo-img.logo-lg{
+      transform: scale(1.65) !important;
+    }
+     .client-logo-img.logo-esko{
+      transform: scale(1.80) !important;
+    }
+        .client-logo-img.logo-kpmg{
+      transform: scale(1.65) !important;
+    }
+        .client-logo-img.logo-ecolab{
+      transform: scale(1.53) !important;
+    }
+        .client-logo-img.logo-iprocure{
+      transform: scale(2.00) !important;
+    }
+        .client-logo-img.logo-balrakshabhaarth{
+      transform: scale(1.63) !important;
+    }
+      .client-logo-img.logo-azim-premji{
+      transform: scale(1.16) !important;
+    }
+   
+    
   </style>
   <div class="marquee-wrapper">
     <div class="marquee-track left-to-right">
-      <div class="logo-marquee-item"><img src="./bg%20removed/ads-removebg-preview.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.06)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/aribasap.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.05)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/avery.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.21)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/awn.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.41)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/azim_premji.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.01)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/balrakshabhaarth.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.18)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/birla.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.58)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/bpl_medical.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.03)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/ecolab.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.22)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/esg.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.01)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/esko.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.37)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/iprocure.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.29)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/john-deere.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.26)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/kinly.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.25)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/kpmg.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.38)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/lg.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.28)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/ads-removebg-preview.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.06)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/aribasap.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.05)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/avery.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.21)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/awn.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.41)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/azim_premji.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.01)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/balrakshabhaarth.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.18)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/birla.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.58)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/bpl_medical.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.03)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/ecolab.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.22)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/esg.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.01)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/esko.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.37)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/iprocure.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.29)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/john-deere.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.26)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/kinly.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.25)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/kpmg.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.38)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/lg.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.28)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/servopro.png" class="client-logo-img logo-servopro" alt="Client logo" loading="lazy" style="transform: scale(1.20)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/ads-removebg-preview.png" class="client-logo-img logo-ads" alt="Client logo" loading="lazy" style="transform: scale(1.06)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/aribasap.png" class="client-logo-img logo-aribasap" alt="Client logo" loading="lazy" style="transform: scale(1.05)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/avery.png" class="client-logo-img logo-avery" alt="Client logo" loading="lazy" style="transform: scale(1.21)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/awn.png" class="client-logo-img logo-awn" alt="Client logo" loading="lazy" style="transform: scale(1.41)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/birla.png" class="client-logo-img logo-birla" alt="Client logo" loading="lazy" style="transform: scale(1.58)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/bpl_medical.png" class="client-logo-img logo-bpl-medical" alt="Client logo" loading="lazy" style="transform: scale(1.03)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/ecolab.png" class="client-logo-img logo-ecolab" alt="Client logo" loading="lazy" style="transform: scale(1.22)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/esko.png" class="client-logo-img logo-esko" alt="Client logo" loading="lazy" style="transform: scale(1.37)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/john-deere.png" class="client-logo-img logo-john-deere" alt="Client logo" loading="lazy" style="transform: scale(1.26)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/kinly.png" class="client-logo-img logo-kinly" alt="Client logo" loading="lazy" style="transform: scale(1.25)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/tricon-infotech.png" class="client-logo-img logo-tricon-infotech" alt="Client logo" loading="lazy" style="transform: scale(1.04)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/kpmg.png" class="client-logo-img logo-kpmg" alt="Client logo" loading="lazy" style="transform: scale(1.38)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/iprocure.png" class="client-logo-img logo-iprocure" alt="Client logo" loading="lazy" style="transform: scale(1.29)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/lg.png" class="client-logo-img logo-lg" alt="Client logo" loading="lazy" style="transform: scale(1.28)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/servopro.png" class="client-logo-img logo-servopro" alt="Client logo" loading="lazy" style="transform: scale(1.20)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/ads-removebg-preview.png" class="client-logo-img logo-ads" alt="Client logo" loading="lazy" style="transform: scale(1.06)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/aribasap.png" class="client-logo-img logo-aribasap" alt="Client logo" loading="lazy" style="transform: scale(1.05)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/avery.png" class="client-logo-img logo-avery" alt="Client logo" loading="lazy" style="transform: scale(1.21)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/awn.png" class="client-logo-img logo-awn" alt="Client logo" loading="lazy" style="transform: scale(1.41)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/birla.png" class="client-logo-img logo-birla" alt="Client logo" loading="lazy" style="transform: scale(1.58)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/bpl_medical.png" class="client-logo-img logo-bpl-medical" alt="Client logo" loading="lazy" style="transform: scale(1.03)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/ecolab.png" class="client-logo-img logo-ecolab" alt="Client logo" loading="lazy" style="transform: scale(1.22)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/esko.png" class="client-logo-img logo-esko" alt="Client logo" loading="lazy" style="transform: scale(1.37)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/iprocure.png" class="client-logo-img logo-iprocure" alt="Client logo" loading="lazy" style="transform: scale(1.29)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/john-deere.png" class="client-logo-img logo-john-deere" alt="Client logo" loading="lazy" style="transform: scale(1.26)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/kinly.png" class="client-logo-img logo-kinly" alt="Client logo" loading="lazy" style="transform: scale(1.25)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/tricon-infotech.png" class="client-logo-img logo-tricon-infotech" alt="Client logo" loading="lazy" style="transform: scale(1.04)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/kpmg.png" class="client-logo-img logo-kpmg" alt="Client logo" loading="lazy" style="transform: scale(1.38)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/lg.png" class="client-logo-img logo-lg" alt="Client logo" loading="lazy" style="transform: scale(1.28)"></div>
     </div>
     <div class="marquee-track right-to-left">
-      <div class="logo-marquee-item"><img src="./bg%20removed/Newtral.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.24)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/ola.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.00)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/pharmeasy.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.09)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/safelease.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.06)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/servopro.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.20)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/Genpact.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.25)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/softland.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.08)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/spree.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.03)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/tally.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.00)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/tricon-infotech.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.04)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/udan.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.09)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/c_a.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.06)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/Vedantu.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.11)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/wildcraft.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.10)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/Ziff_Devis.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.00)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/zyme.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.05)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/Newtral.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.24)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/ola.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.00)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/pharmeasy.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.09)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/safelease.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.06)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/servopro.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.20)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/Genpact.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.25)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/softland.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.08)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/spree.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.03)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/tally.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.00)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/tricon-infotech.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.04)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/udan.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.09)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/c_a.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.06)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/Vedantu.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.11)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/wildcraft.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.10)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/Ziff_Devis.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.00)"></div>
-      <div class="logo-marquee-item"><img src="./bg%20removed/zyme.png" class="client-logo-img" alt="Client logo" loading="lazy" style="transform: scale(1.05)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/esg.png" class="client-logo-img logo-esg" alt="Client logo" loading="lazy" style="transform: scale(1.01)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/balrakshabhaarth.png" class="client-logo-img logo-balrakshabhaarth" alt="Client logo" loading="lazy" style="transform: scale(1.18)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/Newtral.png" class="client-logo-img logo-newtral" alt="Client logo" loading="lazy" style="transform: scale(1.24)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/ola.png" class="client-logo-img logo-ola" alt="Client logo" loading="lazy" style="transform: scale(1.00)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/pharmeasy.png" class="client-logo-img logo-pharmeasy" alt="Client logo" loading="lazy" style="transform: scale(1.09)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/safelease.png" class="client-logo-img logo-safelease" alt="Client logo" loading="lazy" style="transform: scale(1.06)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/Genpact.png" class="client-logo-img logo-genpact" alt="Client logo" loading="lazy" style="transform: scale(1.25)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/softland.png" class="client-logo-img logo-softland" alt="Client logo" loading="lazy" style="transform: scale(1.08)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/spree.png" class="client-logo-img logo-spree" alt="Client logo" loading="lazy" style="transform: scale(1.03)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/tally.png" class="client-logo-img logo-tally" alt="Client logo" loading="lazy" style="transform: scale(1.00)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/udan.png" class="client-logo-img logo-udan" alt="Client logo" loading="lazy" style="transform: scale(1.09)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/c_a.png" class="client-logo-img logo-ca" alt="Client logo" loading="lazy" style="transform: scale(1.06)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/Vedantu.png" class="client-logo-img logo-vedantu" alt="Client logo" loading="lazy" style="transform: scale(1.11)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/wildcraft.png" class="client-logo-img logo-wildcraft" alt="Client logo" loading="lazy" style="transform: scale(1.10)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/Ziff_Devis.png" class="client-logo-img logo-ziff-devis" alt="Client logo" loading="lazy" style="transform: scale(1.00)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/azim_premji.png" class="client-logo-img logo-azim-premji" alt="Client logo" loading="lazy" style="transform: scale(1.01)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/zyme.png" class="client-logo-img logo-zyme" alt="Client logo" loading="lazy" style="transform: scale(1.05)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/esg.png" class="client-logo-img logo-esg" alt="Client logo" loading="lazy" style="transform: scale(1.01)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/balrakshabhaarth.png" class="client-logo-img logo-balrakshabhaarth" alt="Client logo" loading="lazy" style="transform: scale(1.18)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/Newtral.png" class="client-logo-img logo-newtral" alt="Client logo" loading="lazy" style="transform: scale(1.24)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/ola.png" class="client-logo-img logo-ola" alt="Client logo" loading="lazy" style="transform: scale(1.00)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/pharmeasy.png" class="client-logo-img logo-pharmeasy" alt="Client logo" loading="lazy" style="transform: scale(1.09)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/safelease.png" class="client-logo-img logo-safelease" alt="Client logo" loading="lazy" style="transform: scale(1.06)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/Genpact.png" class="client-logo-img logo-genpact" alt="Client logo" loading="lazy" style="transform: scale(1.25)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/softland.png" class="client-logo-img logo-softland" alt="Client logo" loading="lazy" style="transform: scale(1.08)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/spree.png" class="client-logo-img logo-spree" alt="Client logo" loading="lazy" style="transform: scale(1.03)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/tally.png" class="client-logo-img logo-tally" alt="Client logo" loading="lazy" style="transform: scale(1.00)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/udan.png" class="client-logo-img logo-udan" alt="Client logo" loading="lazy" style="transform: scale(1.09)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/c_a.png" class="client-logo-img logo-ca" alt="Client logo" loading="lazy" style="transform: scale(1.06)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/Vedantu.png" class="client-logo-img logo-vedantu" alt="Client logo" loading="lazy" style="transform: scale(1.11)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/wildcraft.png" class="client-logo-img logo-wildcraft" alt="Client logo" loading="lazy" style="transform: scale(1.10)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/Ziff_Devis.png" class="client-logo-img logo-ziff-devis" alt="Client logo" loading="lazy" style="transform: scale(1.00)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/azim_premji.png" class="client-logo-img logo-azim-premji" alt="Client logo" loading="lazy" style="transform: scale(1.01)"></div>
+      <div class="logo-marquee-item"><img src="./bg%20removed/esg.png" class="client-logo-img logo-esg" alt="Client logo" loading="lazy" style="transform: scale(1.01)"></div>
+
+      <div class="logo-marquee-item"><img src="./bg%20removed/zyme.png" class="client-logo-img logo-zyme" alt="Client logo" loading="lazy" style="transform: scale(1.05)"></div>
     </div>
   </div>
 </section>
