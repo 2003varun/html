@@ -386,6 +386,9 @@ textarea.input { min-height: 90px; resize: vertical; }
     font-weight: 400;
     letter-spacing: 0.5px;
 }
+[data-dc-tpl="13"].logo {
+  color: #777777;
+}
 
 .nav {
   display: flex; align-items: center; gap: var(--space-4);
