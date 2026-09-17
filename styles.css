@@ -550,7 +550,7 @@ div, section, figure, nav, article, main, header, footer {
   flex-shrink: 0;
 }
 [data-dc-tpl="13"].logo {
-  color: #777777;
+  color: #777777
 }
 
 /* --------------------------------------------------------------------------
