@@ -549,8 +549,12 @@ div, section, figure, nav, article, main, header, footer {
   display: inline-block;
   flex-shrink: 0;
 }
-[data-dc-tpl="13"].logo {
+/* [data-dc-tpl="13"].logo {
   color: #777777
+} */
+
+header .logo {
+  color: #777777;
 }
 
 /* --------------------------------------------------------------------------
