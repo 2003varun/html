@@ -1868,13 +1868,8 @@ header .logo {
               display: flex;
               align-items: center;
               justify-content: center;
-              aspect-ratio: 2 / 3;
-              width: clamp(55px, 6vw, 85px);
+              width: max-content;
               flex-shrink: 0;
-            }
-
-            .marquee-track.left-to-right .logo-marquee-item {
-              width: clamp(66px, 7.5vw, 102px);
             }
 
             .client-logo-img {
@@ -1892,7 +1887,7 @@ header .logo {
               max-height: none !important;
             }
 
-            .client-logo-img.logo-ads-removed-preview {
+            .client-logo-img.logo-ads {
               width: 108px !important;
               height: 210px !important;
               max-width: none !important;
@@ -1955,7 +1950,7 @@ header .logo {
               max-height: none !important;
             }
 
-            .client-logo-img.logo-KINLY-WITH {
+            .client-logo-img.logo-kinly {
               width: 127.5px !important;
               height: auto !important;
               max-width: none !important;
@@ -2033,8 +2028,8 @@ header .logo {
             }
 
             .client-logo-img.logo-genpact {
-              width: 72.3px !important;
-              height: auto !important;
+              width: 130px !important;
+              height: 100px !important;
               max-width: none !important;
               max-height: none !important;
             }
