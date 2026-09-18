@@ -1823,56 +1823,40 @@ header .logo {
     padding: 6px 6px !important;
   }
 }
-.marquee-wrapper {
-              display: flex;
-              flex-direction: column;
-              gap: 40px;
-              width: 100%;
-            }
+.client-logos-grid {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 12px;
+  width: 100%;
+}
 
-            .marquee-track {
-              display: flex;
-              /* width removed for better compatibility */
-              gap: 70px;
-            }
+@media (max-width: 1024px) {
+  .client-logos-grid {
+    grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  }
+}
 
-            .marquee-track.left-to-right {
-              animation: scroll-ltr 20s linear infinite;
-            }
+.client-logo-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface, #fff);
+  border: 1px solid var(--color-divider, #eaeaea);
+  border-radius: 6px;
+  padding: 10px;
+  aspect-ratio: 3 / 2;
+  width: 100%;
+}
 
-            .marquee-track.right-to-left {
-              animation: scroll-rtl 20s linear infinite;
-            }
+.client-logos-grid .client-logo-card .client-logo-img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+}
 
-            @keyframes scroll-ltr {
-              0% {
-                transform: translateX(calc(-50% - 50px));
-              }
-
-              100% {
-                transform: translateX(0%);
-              }
-            }
-
-            @keyframes scroll-rtl {
-              0% {
-                transform: translateX(0%);
-              }
-
-              100% {
-                transform: translateX(calc(-50% - 50px));
-              }
-            }
-
-            .logo-marquee-item {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              width: max-content;
-              flex-shrink: 0;
-            }
-
-            .client-logo-img {
+.client-logo-img {
               width: 100%;
               height: 100%;
               max-width: 100%;
@@ -1937,7 +1921,7 @@ header .logo {
             }
 
             .client-logo-img.logo-esko {
-              width: 183.6px !important;
+              width: 250px !important;
               height: auto !important;
               max-width: none !important;
               max-height: none !important;
@@ -2103,3 +2087,141 @@ header .logo {
               max-width: none !important;
               max-height: none !important;
             }
+
+
+.marquee-wrapper {
+              display: flex;
+              flex-direction: column;
+              gap: 40px;
+              width: 100%;
+            }
+
+            .marquee-track {
+              display: flex;
+              /* width removed for better compatibility */
+              gap: 70px;
+            }
+
+            .marquee-track.left-to-right {
+              animation: scroll-ltr 20s linear infinite;
+            }
+
+            .marquee-track.right-to-left {
+              animation: scroll-rtl 20s linear infinite;
+            }
+
+            @keyframes scroll-ltr {
+              0% {
+                transform: translateX(calc(-50% - 50px));
+              }
+
+              100% {
+                transform: translateX(0%);
+              }
+            }
+
+            @keyframes scroll-rtl {
+              0% {
+                transform: translateX(0%);
+              }
+
+              100% {
+                transform: translateX(calc(-50% - 50px));
+              }
+            }
+
+            .logo-marquee-item {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: max-content;
+              flex-shrink: 0;
+            }
+
+            
+
+
+.unified-marquee-wrapper {
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  overflow: hidden;
+  width: 100%;
+}
+
+.unified-marquee-wrapper .marquee-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+}
+
+.unified-marquee-wrapper .marquee-track:nth-child(1) {
+  animation: unified-scroll-ltr 40s linear infinite;
+}
+
+.unified-marquee-wrapper .marquee-track:nth-child(2) {
+  animation: unified-scroll-rtl 40s linear infinite;
+}
+
+@keyframes unified-scroll-rtl {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(-50% - 6px)); }
+}
+
+@keyframes unified-scroll-ltr {
+  0% { transform: translateX(calc(-50% - 6px)); }
+  100% { transform: translateX(0); }
+}
+
+.unified-marquee-wrapper .client-logo-card {
+  overflow: hidden;
+  flex-shrink: 0;
+  width: calc((100cqw - (7 * 12px)) / 8); /* Exactly 8 visible per row on desktop */
+  aspect-ratio: 3 / 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-surface, #fff);
+  border: 1px solid var(--color-divider, #eaeaea);
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.unified-marquee-wrapper .client-logo-card .client-logo-img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;
+}
+
+@media (max-width: 1024px) {
+  .unified-marquee-wrapper .client-logo-card {
+    width: calc((100cqw - (4 * 12px)) / 5); /* 5 visible */
+  }
+}
+
+@media (max-width: 768px) {
+  .unified-marquee-wrapper .client-logo-card {
+    width: calc((100cqw - (2 * 12px)) / 3); /* 3 visible */
+  }
+}
+
+
+.unified-marquee-wrapper .client-logo-card .logo-esko { transform: scale(1.5) !important; }
+.unified-marquee-wrapper .client-logo-card .logo-vedantu { transform: scale(1.4) !important; }
+.unified-marquee-wrapper .client-logo-card .logo-tricon-infotech { transform: scale(1.35) !important; }
+.unified-marquee-wrapper .client-logo-card .logo-ola { transform: scale(1.5) !important; }
+.unified-marquee-wrapper .client-logo-card .logo-iprocure { transform: scale(1.4) !important; }
+
+
+/* Additional visual normalization */
+.unified-marquee-wrapper .client-logo-card .logo-ads { transform: scale(1.4) !important; }
+.unified-marquee-wrapper .client-logo-card .logo-balrakshabhaarth { transform: scale(1.4) !important; }
+.unified-marquee-wrapper .client-logo-card .logo-servopro { transform: scale(1.35) !important; }
+.unified-marquee-wrapper .client-logo-card .logo-ecolab { transform: scale(1.25) !important; }
+.unified-marquee-wrapper .client-logo-card .logo-aribasap { transform: scale(1.2) !important; }
+.unified-marquee-wrapper .client-logo-card .logo-john-deere { transform: scale(1.25) !important; }
+.unified-marquee-wrapper .client-logo-card .logo-kinly { transform: scale(1.2) !important; }
+.unified-marquee-wrapper .client-logo-card .logo-kpmg { transform: scale(1.15) !important; }
