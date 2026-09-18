@@ -1823,3 +1823,288 @@ header .logo {
     padding: 6px 6px !important;
   }
 }
+.marquee-wrapper {
+              display: flex;
+              flex-direction: column;
+              gap: 40px;
+              width: 100%;
+            }
+
+            .marquee-track {
+              display: flex;
+              width: max-content;
+              gap: 100px;
+            }
+
+            .marquee-track.left-to-right {
+              animation: scroll-ltr 45s linear infinite;
+            }
+
+            .marquee-track.right-to-left {
+              animation: scroll-rtl 45s linear infinite;
+            }
+
+            @keyframes scroll-ltr {
+              0% {
+                transform: translateX(calc(-50% - 50px));
+              }
+
+              100% {
+                transform: translateX(0%);
+              }
+            }
+
+            @keyframes scroll-rtl {
+              0% {
+                transform: translateX(0%);
+              }
+
+              100% {
+                transform: translateX(calc(-50% - 50px));
+              }
+            }
+
+            .logo-marquee-item {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              aspect-ratio: 2 / 3;
+              width: clamp(55px, 6vw, 85px);
+              flex-shrink: 0;
+            }
+
+            .marquee-track.left-to-right .logo-marquee-item {
+              width: clamp(66px, 7.5vw, 102px);
+            }
+
+            .client-logo-img {
+              width: 100%;
+              height: 100%;
+              max-width: 100%;
+              max-height: 100%;
+              object-fit: contain;
+            }
+
+            .client-logo-img.logo-servopro {
+              width: 170.3px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-ads-removed-preview {
+              width: 108px !important;
+              height: 210px !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-aribasap {
+              width: 163.2px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-avery {
+              width: 166.3px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-awn {
+              width: 143.8px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-birla {
+              width: 163.2px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-bpl-medical {
+              width: 140.8px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-ecolab {
+              width: 156.1px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-esko {
+              width: 183.6px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-john-deere {
+              width: 128.5px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-KINLY-WITH {
+              width: 127.5px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-tricon-infotech {
+              width: 185.6px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-kpmg {
+              width: 168.3px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-iprocure {
+              width: 204.0px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-lg {
+              width: 168.3px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-esg {
+              width: 130.1px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-balrakshabhaarth {
+              width: 138.5px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-newtral {
+              width: 136.0px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-ola {
+              width: 130.1px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-pharmeasy {
+              width: 180px !important;
+              height: 190px !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-safelease {
+              width: 180px !important;
+              height: 190px !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-genpact {
+              width: 72.3px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-softland {
+              width: 180px !important;
+              height: 150px !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-spree {
+              width: 87.5px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-tally {
+              width: 156.4px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-udan {
+              width: 130.1px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-ca {
+              width: 68.0px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-vedantu {
+              width: 150px !important;
+              height: 150px !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-wildcraft {
+              width: 93.5px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-ziff-devis {
+              width: 85.0px !important;
+              height: auto !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-azim-premji {
+              width: 150px !important;
+              height: 150px !important;
+              max-width: none !important;
+              max-height: none !important;
+            }
+
+            .client-logo-img.logo-zyme {
+              width: 150px !important;
+              height: 150px !important;
+              max-width: none !important;
+              max-height: none !important;
+            }

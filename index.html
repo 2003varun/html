@@ -36,7 +36,7 @@
           <a href="#top"
             style="display:flex;align-items:center;gap:11px;text-decoration:none;color:var(--color-text);margin-right:auto">
             <img src="./logo.png" alt="Logo" style="height:55px;width:auto;object-fit:contain;">
-            <span class="logo" style="font-size: 60px;">Q-DAT</span>
+            <span class="logo" style="font-size: 70px;">Q-DAT</span>
           </a>
           <nav style="display:flex;gap:26px;flex-wrap:wrap">
             <a href="#services" style="text-decoration:none;color:var(--color-text);font-size:14px">Services</a>
@@ -105,27 +105,76 @@
                 Everything we run</div>
               <div style="font-size:11px;color:var(--color-neutral-700)">42 services</div>
             </div>
-            <div sc-camel-on-mouse-enter="{{ holdMatrix }}" sc-camel-on-mouse-leave="{{ releaseMatrix }}"
+            <div id="pillar-container"
               style="display:flex;gap:20px;border-top:1px solid var(--color-divider);padding-top:16px">
-              <div style="flex:0 0 138px;display:flex;flex-direction:column;gap:3px">
-                <sc-for list="{{ pillars }}" as="p" hint-placeholder-count="6">
-                  <button type="button" sc-camel-on-click="{{ p.select }}"
-                    style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;text-align:left;cursor:pointer;border:none;border-left:3px solid {{ p.bar }};background:{{ p.bg }};color:{{ p.color }};font-family:var(--font-heading);font-size:{{ p.size }};font-weight:{{ p.weight }};letter-spacing:{{ p.tracking }};text-transform:uppercase;padding:10px 11px;transition:background .18s ease,color .18s ease">
-                    <span>{{ p.name }}</span>
-                    <span
-                      style="flex:none;font-size:10.5px;color:{{ p.countColor }};font-variant-numeric:tabular-nums">{{
-                      p.count }}</span>
-                  </button>
-                </sc-for>
+              <div id="pillar-buttons" style="flex:0 0 138px;display:flex;flex-direction:column;gap:3px">
               </div>
-              <div
+              <div id="pillar-chips"
                 style="flex:1 1 auto;min-width:0;display:flex;flex-wrap:wrap;gap:9px;align-content:center;justify-content:flex-start">
-                <sc-for list="{{ activeChips }}" as="chip" hint-placeholder-count="8">
-                  <a class="qd-chip" href="#contact" title="Start a free trial project"
-                    style="animation:qd-chip-in .34s ease both;animation-delay:{{ chip.delay }}">{{ chip.name }}</a>
-                </sc-for>
               </div>
             </div>
+            <script>
+              const PILLARS = [
+                { name: "Catalog", services: ["Product listings", "Catalog creation", "Image sourcing", "Price monitoring", "Portal QA", "Product tagging", "Attribute mapping", "Content uploads", "Competitor tracking"] },
+                { name: "Data", services: ["Data enrichment", "Data cleansing", "Classification", "Vendor profiling", "Master data", "Deduplication", "Data validation", "Taxonomy design"] },
+                { name: "Back office", services: ["Invoice matching", "ERP data entry", "Purchase orders", "Inventory tracking", "Vendor onboarding", "Payment tracking", "Order processing", "Reconciliation", "GRN entry"] },
+                { name: "Documents", services: ["Form processing", "Document indexing", "Digitization", "Data capture", "Scan cleanup", "Archive migration", "Records tagging"] },
+                { name: "Sales", services: ["Prospect data", "Account profiling", "Sales operations"] },
+                { name: "Technology", services: ["Software builds", "L1 / L2 support", "Incident handling", "Access management", "Monitoring", "Report automation"] }
+              ];
+
+              let activePillarIndex = 0;
+              let isMatrixHeld = false;
+
+              function renderPillars() {
+                const buttonsContainer = document.getElementById('pillar-buttons');
+                const chipsContainer = document.getElementById('pillar-chips');
+                if (!buttonsContainer || !chipsContainer) return;
+
+                buttonsContainer.innerHTML = PILLARS.map((p, i) => {
+                  const on = i === activePillarIndex;
+                  const bar = on ? "var(--color-accent-800)" : "var(--color-divider)";
+                  const bg = on ? "var(--color-accent)" : "transparent";
+                  const color = on ? "#fff" : "var(--color-neutral-700)";
+                  const countColor = on ? "#fff" : "var(--color-neutral-700)";
+                  const weight = on ? 600 : 500;
+                  const size = on ? "14.5px" : "13px";
+                  const tracking = on ? "0.06em" : "0.04em";
+                  
+                  return `<button type="button" onclick="selectPillar(${i})"
+                    style="display:flex;justify-content:space-between;align-items:baseline;gap:8px;text-align:left;cursor:pointer;border:none;border-left:3px solid ${bar};background:${bg};color:${color};font-family:var(--font-heading);font-size:${size};font-weight:${weight};letter-spacing:${tracking};text-transform:uppercase;padding:10px 11px;transition:background .18s ease,color .18s ease">
+                    <span>${p.name}</span>
+                    <span style="flex:none;font-size:10.5px;color:${countColor};font-variant-numeric:tabular-nums">${p.services.length}</span>
+                  </button>`;
+                }).join('');
+
+                const activeServices = PILLARS[activePillarIndex].services;
+                chipsContainer.innerHTML = activeServices.map((n, i) => {
+                  const delay = (i * 0.035).toFixed(3) + "s";
+                  return `<a class="qd-chip" href="#contact" title="Start a free trial project" style="animation:qd-chip-in .34s ease both;animation-delay:${delay}">${n}</a>`;
+                }).join('');
+              }
+
+              window.selectPillar = function(index) {
+                activePillarIndex = index;
+                renderPillars();
+              }
+
+              document.addEventListener("DOMContentLoaded", function () {
+                const container = document.getElementById('pillar-container');
+                if (container) {
+                  container.addEventListener('mouseenter', () => { isMatrixHeld = true; });
+                  container.addEventListener('mouseleave', () => { isMatrixHeld = false; });
+                }
+                renderPillars();
+                setInterval(() => {
+                  if (!isMatrixHeld) {
+                    activePillarIndex = (activePillarIndex + 1) % PILLARS.length;
+                    renderPillars();
+                  }
+                }, 4600);
+              });
+            </script>
             <figcaption style="margin-top:14px">Six pillars, cycling. Hover to hold one, or pick a pillar — every
               service links to a free trial project.</figcaption>
           </figure>
@@ -136,293 +185,6 @@
           <div
             style="text-align:center;font-size:11px;letter-spacing:0.12em;text-transform:uppercase;color:var(--color-neutral-700);margin-bottom:12px">
             Trusted by teams at </div>
-          <style>
-            .marquee-wrapper {
-              display: flex;
-              flex-direction: column;
-              gap: 40px;
-              width: 100%;
-            }
-
-            .marquee-track {
-              display: flex;
-              width: max-content;
-              gap: 100px;
-            }
-
-            .marquee-track.left-to-right {
-              animation: scroll-ltr 45s linear infinite;
-            }
-
-            .marquee-track.right-to-left {
-              animation: scroll-rtl 45s linear infinite;
-            }
-
-            @keyframes scroll-ltr {
-              0% {
-                transform: translateX(calc(-50% - 50px));
-              }
-
-              100% {
-                transform: translateX(0%);
-              }
-            }
-
-            @keyframes scroll-rtl {
-              0% {
-                transform: translateX(0%);
-              }
-
-              100% {
-                transform: translateX(calc(-50% - 50px));
-              }
-            }
-
-            .logo-marquee-item {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              aspect-ratio: 2 / 3;
-              width: clamp(55px, 6vw, 85px);
-              flex-shrink: 0;
-            }
-
-            .marquee-track.left-to-right .logo-marquee-item {
-              width: clamp(66px, 7.5vw, 102px);
-            }
-
-            .client-logo-img {
-              width: 100%;
-              height: 100%;
-              max-width: 100%;
-              max-height: 100%;
-              object-fit: contain;
-            }
-
-            .client-logo-img.logo-servopro {
-              width: 170.3px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-ads-removed-preview {
-              width: 108px !important;
-              height: 210px !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-aribasap {
-              width: 163.2px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-avery {
-              width: 166.3px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-awn {
-              width: 143.8px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-birla {
-              width: 163.2px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-bpl-medical {
-              width: 140.8px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-ecolab {
-              width: 156.1px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-esko {
-              width: 183.6px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-john-deere {
-              width: 128.5px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-KINLY-WITH {
-              width: 127.5px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-tricon-infotech {
-              width: 185.6px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-kpmg {
-              width: 168.3px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-iprocure {
-              width: 204.0px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-lg {
-              width: 168.3px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-esg {
-              width: 130.1px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-balrakshabhaarth {
-              width: 138.5px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-newtral {
-              width: 136.0px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-ola {
-              width: 130.1px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-pharmeasy {
-              width: 180px !important;
-              height: 190px !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-safelease {
-              width: 180px !important;
-              height: 190px !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-genpact {
-              width: 72.3px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-softland {
-              width: 180px !important;
-              height: 150px !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-spree {
-              width: 87.5px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-tally {
-              width: 156.4px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-udan {
-              width: 130.1px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-ca {
-              width: 68.0px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-vedantu {
-              width: 150px !important;
-              height: 150px !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-wildcraft {
-              width: 93.5px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-ziff-devis {
-              width: 85.0px !important;
-              height: auto !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-azim-premji {
-              width: 150px !important;
-              height: 150px !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-
-            .client-logo-img.logo-zyme {
-              width: 150px !important;
-              height: 150px !important;
-              max-width: none !important;
-              max-height: none !important;
-            }
-          </style>
           <div class="marquee-wrapper">
             <div class="marquee-track left-to-right">
               <div class="logo-marquee-item"><img src="./bg%20removed/servopro.png"
