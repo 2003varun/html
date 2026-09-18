@@ -2209,11 +2209,11 @@ header .logo {
 }
 
 
-.unified-marquee-wrapper .client-logo-card .logo-esko { transform: scale(1.5) !important; }
+.unified-marquee-wrapper .client-logo-card .logo-esko { transform: scale(2.0) !important; }
 .unified-marquee-wrapper .client-logo-card .logo-vedantu { transform: scale(1.4) !important; }
 .unified-marquee-wrapper .client-logo-card .logo-tricon-infotech { transform: scale(1.35) !important; }
 .unified-marquee-wrapper .client-logo-card .logo-ola { transform: scale(1.5) !important; }
-.unified-marquee-wrapper .client-logo-card .logo-iprocure { transform: scale(1.4) !important; }
+.unified-marquee-wrapper .client-logo-card .logo-iprocure { transform: scale(1.8) !important; }
 
 
 /* Additional visual normalization */
@@ -2225,3 +2225,13 @@ header .logo {
 .unified-marquee-wrapper .client-logo-card .logo-john-deere { transform: scale(1.25) !important; }
 .unified-marquee-wrapper .client-logo-card .logo-kinly { transform: scale(1.2) !important; }
 .unified-marquee-wrapper .client-logo-card .logo-kpmg { transform: scale(1.15) !important; }
+
+.unified-marquee-wrapper .client-logo-card .logo-bpl-medical { transform: scale(1.4) !important; }
+.unified-marquee-wrapper .client-logo-card .logo-birla { transform: scale(1.4) !important; }
+
+.unified-marquee-wrapper .client-logo-card .logo-lg { transform: scale(1.4) !important; }
+
+.unified-marquee-wrapper .client-logo-card .logo-safelease { transform: scale(1.2) !important; }
+.unified-marquee-wrapper .client-logo-card .logo-zyme { transform: scale(1.35) !important; }
+.unified-marquee-wrapper .client-logo-card .logo-newtral { transform: scale(1.35) !important; }
+.unified-marquee-wrapper .client-logo-card .logo-pharmeasy { transform: scale(1.2) !important; }
