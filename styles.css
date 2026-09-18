@@ -1832,16 +1832,16 @@ header .logo {
 
             .marquee-track {
               display: flex;
-              width: max-content;
-              gap: 100px;
+              /* width removed for better compatibility */
+              gap: 70px;
             }
 
             .marquee-track.left-to-right {
-              animation: scroll-ltr 45s linear infinite;
+              animation: scroll-ltr 20s linear infinite;
             }
 
             .marquee-track.right-to-left {
-              animation: scroll-rtl 45s linear infinite;
+              animation: scroll-rtl 20s linear infinite;
             }
 
             @keyframes scroll-ltr {
