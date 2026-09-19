@@ -2152,9 +2152,10 @@ header .logo {
 
 .unified-marquee-wrapper .marquee-track {
   display: flex;
-  gap: 12px;
+  gap: 36px;                                         /*gap between the clients logo*/
   width: max-content;
 }
+
 
 .unified-marquee-wrapper .marquee-track:nth-child(1) {
   animation: unified-scroll-ltr 40s linear infinite;
@@ -2166,18 +2167,18 @@ header .logo {
 
 @keyframes unified-scroll-rtl {
   0% { transform: translateX(0); }
-  100% { transform: translateX(calc(-50% - 6px)); }
+  100% { transform: translateX(calc(-50% - 18px)); }
 }
 
 @keyframes unified-scroll-ltr {
-  0% { transform: translateX(calc(-50% - 6px)); }
+  0% { transform: translateX(calc(-50% - 18px)); }
   100% { transform: translateX(0); }
 }
 
 .unified-marquee-wrapper .client-logo-card {
   overflow: hidden;
   flex-shrink: 0;
-  width: calc((100cqw - (7 * 12px)) / 8); /* Exactly 8 visible per row on desktop */
+  width: calc((100cqw - (7 * 36px)) / 8); /* Exactly 8 visible per row on desktop */
   aspect-ratio: 3 / 2;
   display: flex;
   align-items: center;
@@ -2198,13 +2199,13 @@ header .logo {
 
 @media (max-width: 1024px) {
   .unified-marquee-wrapper .client-logo-card {
-    width: calc((100cqw - (4 * 12px)) / 5); /* 5 visible */
+    width: calc((100cqw - (4 * 36px)) / 5); /* 5 visible */
   }
 }
 
 @media (max-width: 768px) {
   .unified-marquee-wrapper .client-logo-card {
-    width: calc((100cqw - (2 * 12px)) / 3); /* 3 visible */
+    width: calc((100cqw - (2 * 36px)) / 3); /* 3 visible */
   }
 }
 
